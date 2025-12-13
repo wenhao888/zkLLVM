@@ -534,6 +534,7 @@ int curve_dependent_main(
             std::cout << "Writing proof to " << proof_path << "..." << std::endl;
             proof_print<Endianness, ProofType>(proof, fri_params, proof_path);
             std::cout << "Proof written" << std::endl;
+            std::cout << "wenhao debug" << std::endl;
         }
         return 0;
     }
