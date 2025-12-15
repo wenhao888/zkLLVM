@@ -648,3 +648,4 @@ callgrind.*
 
 # We don't want to commit Cargo.lock for examples
 examples/rust/Cargo.lock
+/libs/
