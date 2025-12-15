@@ -138,6 +138,7 @@ int curve_dependent_main(
 
 int main(int argc, char *argv[]) {
 
+    std::cout << "wenhao started tanspiler" << std::endl;
     boost::program_options::options_description options_desc("zkLLVM circuit EVM gate argument transpiler");
 
     // clang-format off
