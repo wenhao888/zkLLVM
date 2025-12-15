@@ -414,14 +414,16 @@ int curve_dependent_main(
     );
     lpc_scheme_type lpc_scheme(fri_params);
 
-
     if (mode == "gen-gate-argument") {
         bool optimize_gates = false;
         if( vm.count("optimize-gates") )
             optimize_gates = true;
+
+        std::cout << "wlin: start print_sol_files" << std::endl;
         print_sol_files<BlueprintFieldType, ConstraintSystemType, ColumnsRotationsType>(
             desc,
             constraint_system, columns_rotations, output_folder_path, optimize_gates);
+        std::cout << "wlin: end print_sol_files" << std::endl;
     }
 
     if ((mode != "gen-circuit-params") && (mode != "gen-test-proof") && (mode != "gen-evm-verifier")) {
@@ -534,7 +536,7 @@ int curve_dependent_main(
             std::cout << "Writing proof to " << proof_path << "..." << std::endl;
             proof_print<Endianness, ProofType>(proof, fri_params, proof_path);
             std::cout << "Proof written" << std::endl;
-            std::cout << "wenhao debug" << std::endl;
+                        std::cout << "wenhao debug" << std::endl;
         }
         return 0;
     }
