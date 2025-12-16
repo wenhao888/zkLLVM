@@ -52,7 +52,10 @@ void print_sol_files(
     std::string out_folder_path = ".",
     bool optimize_gates = false
 ) {
+    std::cout << "wlin: start print_sol_files" << std::endl;
     nil::blueprint::minimized_profiling_plonk_circuit<BlueprintFieldType> qwerty(desc);
+
+    std::cout << "wlin: before process_split" << std::endl;
     qwerty.process_split(
         nil::blueprint::main_sol_file_template,
         nil::blueprint::gate_sol_file_template,
@@ -61,6 +64,7 @@ void print_sol_files(
         out_folder_path,
         optimize_gates
     );
+    std::cout << "wlin: finish print_sol_files" << std::endl;
 }
 
 inline std::vector<std::size_t> generate_random_step_list(const std::size_t r, const int max_step) {
@@ -537,7 +541,7 @@ int curve_dependent_main(
             std::cout << "Writing proof to " << proof_path << "..." << std::endl;
             proof_print<Endianness, ProofType>(proof, fri_params, proof_path);
             std::cout << "Proof written" << std::endl;
-                        std::cout << "wenhao debug" << std::endl;
+            std::cout << "wenhao debug" << std::endl;
         }
         return 0;
     }
